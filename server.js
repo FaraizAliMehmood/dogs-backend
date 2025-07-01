@@ -42,6 +42,10 @@ const messageSchema = new mongoose.Schema({
 
 const Message = mongoose.model("Message",messageSchema)
 
+app.get("/",async(req,res)=>{
+  res.send("api os working");
+}
+
 app.get("/chatHistory/:senderId/:receiverId",async(req,res)=>{
   const {senderId, receiverId} = req.params;
   try {
